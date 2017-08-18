@@ -221,36 +221,6 @@
       - section1.1
       - section1.1.5
 
-  - mountopts:
-      name: /var
-      option: nosuid
-      state: present
-    when: var_partition.rc == 0
-    tags:
-      - section1
-      - section1.1
-      - section1.1.5
-
-  - mountopts:
-      name: /var
-      option: noexec
-      state: present
-    when: var_partition.rc == 0
-    tags:
-      - section1
-      - section1.1
-      - section1.1.5
-
-  - mountopts:
-      name: /var
-      option: nodev
-      state: present
-    when: var_partition.rc == 0
-    tags:
-      - section1
-      - section1.1
-      - section1.1.5
-
   - name: 1.1.6 Ensure separate partition exists for /var/tmp (Scored)
     command: grep '\s/var/tmp\s' /etc/fstab
     register: var_tmp_partition
